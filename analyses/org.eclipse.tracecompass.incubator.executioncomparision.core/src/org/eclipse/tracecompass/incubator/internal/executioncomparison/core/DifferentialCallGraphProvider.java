@@ -80,7 +80,7 @@ public class DifferentialCallGraphProvider extends DifferentialWeightedTreeProvi
             label = String.valueOf(originalTree.getObject().resolve(new ArrayList<>()));
         }
         if (Double.isFinite(difference)) {
-            return String.format("(%#.02f %% ) %s", difference * 100, label); //$NON-NLS-1$
+            return String.format("(%#+.02f %% ) %s", difference * 100, label); //$NON-NLS-1$
         }
         return label;
 

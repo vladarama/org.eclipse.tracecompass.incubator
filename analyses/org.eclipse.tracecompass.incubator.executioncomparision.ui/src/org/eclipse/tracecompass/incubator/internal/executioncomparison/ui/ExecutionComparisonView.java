@@ -150,6 +150,7 @@ public class ExecutionComparisonView extends DifferentialFlameGraphView implemen
     private @Nullable Listener fSashDragListener;
     private @Nullable SashForm fsashForm = null;
     private static final String TMF_VIEW_UI_CONTEXT = "org.eclipse.tracecompass.tmf.ui.view.context"; //$NON-NLS-1$
+    private static final String Y_AXIS_LABEL = "Event Count"; //$NON-NLS-1$
 
     /**
      * Constructs two density charts for selecting the desired traces and time
@@ -777,7 +778,7 @@ public class ExecutionComparisonView extends DifferentialFlameGraphView implemen
     }
 
     private TmfXYChartViewer createChartViewer(Composite parent) {
-        MultipleEventDensityViewer chartViewer = new MultipleEventDensityViewer(parent, new TmfXYChartSettings(null, null, null, 1));
+        MultipleEventDensityViewer chartViewer = new MultipleEventDensityViewer(parent, new TmfXYChartSettings(null, null, Y_AXIS_LABEL, 1));
         chartViewer.setSendTimeAlignSignals(true);
         chartViewer.getControl().setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
         chartViewer.getControl().addMouseListener(new MouseAdapter() {
